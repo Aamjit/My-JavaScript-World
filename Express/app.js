@@ -9,7 +9,9 @@ app.use(express.json());
 // delete - delete smthing
 // patch - update
 
-mdb.connect('mongodb+srv://amarjit:cdt10070@cluster0.hwj9j.mongodb.net/mdb-1?retryWrites=true&w=majority', (e)=>{
+
+
+mdb.connect(`mongodb+srv://${process.env.username}:${process.env.password}@cluster0.hwj9j.mongodb.net/mdb-1?retryWrites=true&w=majority`, (e)=>{
     if(e) console.log(e.message)
 
     else console.log('Database Connected')
