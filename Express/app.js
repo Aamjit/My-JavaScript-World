@@ -9,10 +9,10 @@ app.use(express.json());
 // delete - delete smthing
 // patch - update
 
-const username = process.env.USER
-const password = process.env.PASSWORD
+// const env = require('dotenv/config')
 
-mdb.connect(`mongodb+srv://${username}:${password}@cluster0.hwj9j.mongodb.net/mdb-1?retryWrites=true&w=majority`, (e)=>{
+// env-cmd -f ./.gitignore/creds.env
+mdb.connect(process.env.DB, (e)=>{   
     if(e) console.log(e.message)
 
     else console.log('Database Connected')
